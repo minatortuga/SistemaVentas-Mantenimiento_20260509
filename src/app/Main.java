@@ -12,11 +12,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //llamada a los metodos de constructor
         ClienteRepository clienteRepository = new ClienteRepository();
+        ClienteService clienteService = new ClienteService(clienteRepository);
+
         ProductoRepository productoRepository = new ProductoRepository();
         VentaRepository ventaRepository = new VentaRepository();
 
-        ClienteService clienteService = new ClienteService(clienteRepository);
+    
         ProductoService productoService = new ProductoService(productoRepository);
         VentaService ventaService = new VentaService(clienteService, productoService, ventaRepository);
         ReporteService reporteService = new ReporteService(ventaRepository);

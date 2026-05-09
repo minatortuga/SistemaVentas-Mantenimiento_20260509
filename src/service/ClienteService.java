@@ -1,16 +1,17 @@
 package service;
 
 import model.Cliente;
-import repository.ClienteRepository;
 import util.Console;
 import util.Validaciones;
+import repository.IClienteRepository;
 
 public class ClienteService {
 
-    private ClienteRepository clienteRepo;
+    //Inversión de control: uso de interfaces
+    private IClienteRepository clienteRepo;
 
-    public ClienteService(ClienteRepository clienteRepo) {
-        this.clienteRepo = clienteRepo;
+    public ClienteService(IClienteRepository repo) {
+        this.clienteRepo = repo;
     }
 
     // BUG intencional: validarDni está mal en util.Validaciones
