@@ -17,9 +17,7 @@ public class ReporteService {
 
     // Code smell: método largo
     public void mostrarReporteVentas() {
-
         List<Venta> ventas = ventaRepo.listar();
-
         Console.info("=== REPORTE DE VENTAS ===");
 
         int i = 1;
@@ -42,5 +40,10 @@ public class ReporteService {
     public void mostrarResumen() {
         int totalVentas = ventaRepo.contarVentas();
         Console.info("TOTAL VENTAS: " + totalVentas);
+    }
+
+    // === NUEVO MÉTODO AGREGADO ===
+    public void mostrarCantidadVentas(int cantidad) {
+        System.out.println("Cantidad de ventas registradas: " + cantidad);
     }
 }
